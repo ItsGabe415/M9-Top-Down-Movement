@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_4o7yg"]
 [ext_resource type="PackedScene" uid="uid://p75euy1gcr34" path="res://lessons/runner.tscn" id="1_yasw7"]
-[ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://simple_obstacle.tscn" id="2_4o7yg"]
+[ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://lessons/simple_obstacle.tscn" id="2_4o7yg"]
 [ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="4_gkp25"]
 
 [node name="game" type="Node2D"]
