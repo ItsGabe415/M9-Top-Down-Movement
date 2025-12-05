@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0i1ik45p7rhh" path="res://assets/runner_down.png" id="1_puh4d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1hi2"]
-radius = 23.021729
+radius = 19.416489
 
 [node name="Runner" type="CharacterBody2D"]
 motion_mode = 1
@@ -15,5 +15,7 @@ unique_name_in_owner = true
 texture = ExtResource("1_puh4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 37)
+position = Vector2(0, 34)
 shape = SubResource("CircleShape2D_h1hi2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
