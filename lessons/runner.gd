@@ -4,7 +4,7 @@ const UP_LEFT = Vector2.UP + Vector2.LEFT
 const UP_RIGHT = Vector2.UP + Vector2.RIGHT
 const DOWN_LEFT = Vector2.DOWN + Vector2.LEFT
 const DOWN_RIGHT = Vector2.DOWN + Vector2.RIGHT
-
+@onready var _dust: GPUParticles2D = %Dust
 @export var max_speed := 600.0
 @export var acceleration := 1200.0
 @export var deceleration := 1080.0
@@ -29,3 +29,9 @@ func _physics_process(delta: float) -> void:
 		)
 	else:
 		_runner_visual.animation_name = RunnerVisual.Animations.IDLE
+	if direction.length() > 0.0:
+		# ...
+		_dust.emitting = true
+	else:
+		# ...
+		_dust.emitting = false

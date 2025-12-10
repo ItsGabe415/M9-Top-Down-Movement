@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://cse67svnxufpc"]
+
+[ext_resource type="Texture2D" uid="uid://tgs14f485wph" path="res://assets/kenney-particles/smoke_04.png" id="1_tijor"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jvfiu"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_7shq5"]
+_data = [Vector2(0.009140767, 0.6385542), 0.0, 0.95859784, 0, 0, Vector2(0.9817184, 0.05421686), -4.2438006, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pfdc8"]
+curve = SubResource("Curve_7shq5")
+
+[sub_resource type="Gradient" id="Gradient_8oawm"]
+offsets = PackedFloat32Array(0.07910751, 0.88438135)
+colors = PackedColorArray(0.984375, 0.5218302, 0.0057678223, 1, 0.97265625, 0.082519054, 0.015197754, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_254b7"]
+gradient = SubResource("Gradient_8oawm")
+
+[sub_resource type="Curve" id="Curve_pdm0v"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.23034735, 0.64056224), 0.0, 0.0, 0, 0, Vector2(0.76234007, 0.06827307), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_fvly1"]
+curve = SubResource("Curve_pdm0v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bnc3y"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_fvly1")
+color_ramp = SubResource("GradientTexture1D_254b7")
+alpha_curve = SubResource("CurveTexture_pfdc8")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_jvfiu")
+amount = 30
+texture = ExtResource("1_tijor")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_bnc3y")
