@@ -3,6 +3,8 @@ extends Node2D
 @onready var _finish_line: FinishLine = %FinishLine
 @onready var _count_down: CountDown = %CountDown
 @onready var _runner: Runner = %Runner
+@onready var _bouncer: CharacterBody2D = %Bouncer
+
 func _ready() -> void:
 	_finish_line.body_entered.connect(func (body: Node) -> void:
 		if body is not Runner:
@@ -29,4 +31,12 @@ func _ready() -> void:
 	_count_down.counting_finished.connect(
 		func() -> void:
 			_runner.set_physics_process(true)
-	) 
+	)
+
+	_bouncer.set_physics_process(false)
+
+	_count_down.counting_finished.connect(
+		func() -> void:
+			_bouncer.set_physics_process(true)
+	)
+	

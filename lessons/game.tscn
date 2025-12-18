@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c62bk8cggi6yq"]
+[gd_scene load_steps=11 format=3 uid="uid://c62bk8cggi6yq"]
 
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_4o7yg"]
 [ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_48faf"]
 [ext_resource type="PackedScene" uid="uid://p75euy1gcr34" path="res://lessons/runner.tscn" id="1_yasw7"]
 [ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://lessons/simple_obstacle.tscn" id="2_4o7yg"]
+[ext_resource type="PackedScene" uid="uid://budpgxkjtmw1f" path="res://lessons/bouncer.tscn" id="4_8c4bg"]
 [ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="4_gkp25"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="5_sepuf"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_viysf"]
@@ -25,6 +26,10 @@ unique_name_in_owner = true
 z_index = 1
 position = Vector2(201, -70)
 
+[node name="Bouncer" parent="Runner" instance=ExtResource("4_8c4bg")]
+unique_name_in_owner = true
+position = Vector2(-375, -8)
+
 [node name="Simple Obstacle" parent="." instance=ExtResource("2_4o7yg")]
 z_index = -1
 position = Vector2(455, 121)
@@ -39,7 +44,7 @@ position = Vector2(0, -3)
 
 [node name="FinishLine" parent="." instance=ExtResource("5_sepuf")]
 unique_name_in_owner = true
-position = Vector2(-6, -254)
+position = Vector2(6, -261)
 area_height = 256
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
