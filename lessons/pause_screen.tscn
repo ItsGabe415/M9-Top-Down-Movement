@@ -31,10 +31,10 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_jtw2t")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnc5g"]
 shader = ExtResource("2_vtnhc")
-shader_parameter/blur_amount = 5.290000251275
+shader_parameter/blur_amount = 1.5
 shader_parameter/tint = Color(0, 0, 0, 1)
 shader_parameter/tint_strength = 0.0
-shader_parameter/saturation = 1.0
+shader_parameter/saturation = 0.30000000000000004
 
 [node name="PauseScreen" type="Control"]
 layout_mode = 3
@@ -45,16 +45,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_tsb0o")
 script = ExtResource("2_qb0gi")
+animation_duration = null
 menu_opened_amount = 1.0
 
 [node name="BlurColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_lnc5g")
-layout_mode = 0
-offset_right = 1922.0
-offset_bottom = 1083.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.98700005
+anchor_bottom = 0.97800004
+offset_right = 26.95996
+offset_bottom = 26.76001
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="UIPanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -69,27 +73,29 @@ offset_bottom = 15.319946
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="UIPanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="UIPanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 
-[node name="ResumeButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="UIPanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Resume"
 
-[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="UIPanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"

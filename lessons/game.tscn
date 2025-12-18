@@ -66,3 +66,5 @@ script = ExtResource("8_tpjcj")
 metadata/_custom_type_script = "uid://57e8080cpukf"
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_tpjcj")]
+process_mode = 3
+animation_duration = 2.3
